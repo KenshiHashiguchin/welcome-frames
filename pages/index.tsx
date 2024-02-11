@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Head>
         <meta property="fc:frame" content="vNext" />
-        <meta property="fc:frame:image" content="https://twitter.com/kENsH10811/photo" />
+        <meta property="fc:frame:image" content="/OkadaIzo.png" />
         <meta property="fc:frame:button:1" content="Join" />
         <meta property="fc:frame:button:2" content="<" />
         <meta property="fc:frame:button:3" content=">" />

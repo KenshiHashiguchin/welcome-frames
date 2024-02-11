@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="47b9fb2c-5dad-4a5d-8139-b78f4699f4d7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../document/affiliation_proof/ヒアリング.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../uniswap/v2-core_copy/contracts/interfaces/IERC20.sol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../uniswap/v2-core_copy/contracts/interfaces/IUniswapV2Callee.sol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../uniswap/v2-core_copy/contracts/interfaces/IUniswapV2ERC20.sol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../uniswap/v2-core_copy/contracts/interfaces/IUniswapV2Factory.sol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../uniswap/v2-core_copy/contracts/interfaces/IUniswapV2Pair.sol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../uniswap/v2-core_copy/contracts/libraries/Math.sol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../uniswap/v2-core_copy/contracts/libraries/SafeMath.sol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../uniswap/v2-core_copy/contracts/libraries/UQ112x112.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DomainProof/domain_proof/sources/generate_certificate.move" beforeDir="false" afterPath="$PROJECT_DIR$/../DomainProof/domain_proof/sources/generate_certificate.move" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../usdt_test/contracts/Disperse.sol" beforeDir="false" afterPath="$PROJECT_DIR$/../usdt_test/contracts/Disperse.sol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2cCcAhPO3wy71zM5p8qoSOgJoe0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="47b9fb2c-5dad-4a5d-8139-b78f4699f4d7" name="Changes" comment="" />
+      <created>1707618859388</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707618859388</updated>
+      <workItem from="1707618862835" duration="922000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

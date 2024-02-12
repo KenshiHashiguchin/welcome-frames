@@ -34,6 +34,7 @@ const IndexPage = ({host}: Props) => {
         <meta name="fc:frame:button:4" content="<<"/>
         <meta property="og:image"
               content="https://fc-polls.vercel.app/api/image?id=054aee65-c63d-46c1-a1f9-a05b747860f6"/>
+        <meta name="fc:frame:post_url" content={`${host}/api/join`}/>
       </Head>
       <main
         className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}

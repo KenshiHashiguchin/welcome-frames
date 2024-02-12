@@ -22,14 +22,17 @@ const IndexPage = ({host}: Props) => {
   return (
     <>
       <Head>
-        <meta property="fc:frame" content="vNext" />
-        <meta property="fc:frame:image" content="https://welcome-frames.vercel.app/api/image" />
-        <meta property="fc:frame:button:1" content="Join" />
-        <meta property="fc:frame:button:2" content="<" />
-        <meta property="fc:frame:button:3" content=">" />
-        <meta property="fc:frame:button:4" content="<<" />
-        <meta property="og:image" content="https://welcome-frames.vercel.app/api/image" />
-        <meta name="fc:frame:post_url" content={`${host}/api/join`}/>
+        <meta property="og:title" content="Vote Recorded"/>
+        <meta name="fc:frame" content="vNext"/>
+        <meta name="fc:frame:image"
+              content="https://fc-polls.vercel.app/api/image?id=054aee65-c63d-46c1-a1f9-a05b747860f6"/>
+        <meta name="fc:frame:post_url"
+              content="https://fc-polls.vercel.app/api/vote?id=054aee65-c63d-46c1-a1f9-a05b747860f6"/>
+        <meta name="fc:frame:button:1" content="hoge"/>
+        <meta name="fc:frame:button:2" content="Create your poll"/>
+        <meta name="fc:frame:button:2:action" content="post_redirect"/>
+        <meta property="og:image"
+              content="https://fc-polls.vercel.app/api/image?id=054aee65-c63d-46c1-a1f9-a05b747860f6"/>
       </Head>
       <main
         className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}

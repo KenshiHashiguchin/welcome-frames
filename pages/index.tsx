@@ -24,14 +24,12 @@ const IndexPage = ({host}: Props) => {
       <Head>
         <meta property="og:title" content="Vote Recorded"/>
         <meta name="fc:frame" content="vNext"/>
-        <meta name="fc:frame:image"
-              content="https://fc-polls.vercel.app/api/image?id=054aee65-c63d-46c1-a1f9-a05b747860f6"/>
         <meta name="fc:frame:button:1" content="Join"/>
         <meta name="fc:frame:button:2" content="<"/>
         <meta name="fc:frame:button:3" content=">"/>
         <meta name="fc:frame:button:4" content="<<"/>
-        <meta property="og:image"
-              content="https://fc-polls.vercel.app/api/image?id=054aee65-c63d-46c1-a1f9-a05b747860f6"/>
+        <meta property="fc:frame:image" content={`${host}/api/image`} />
+        <meta property="og:image" content={`${host}/api/image`} />
         <meta name="fc:frame:post_url" content={`${host}/api/join`}/>
       </Head>
       <main

@@ -33,8 +33,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         <meta name="fc:frame:button:2" content="<">
         <meta name="fc:frame:button:3" content=">">
         <meta name="fc:frame:button:4" content="<<">
-        <meta property="fc:frame:image" content="${host}/api/image?name=ok" >
-        <meta property="og:image" content="${host}/api/image?name=ok" >
+        <meta property="fc:frame:image" content="${host}/api/image?name=ok.png" >
+        <meta property="og:image" content="${host}/api/image?name=ok.png" >
         <meta name="fc:frame:post_url" content="${host}/api/join">
         </head>
         <body>

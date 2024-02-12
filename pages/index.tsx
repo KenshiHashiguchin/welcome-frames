@@ -15,6 +15,7 @@ export default function Home() {
         <meta property="fc:frame:button:3" content=">" />
         <meta property="fc:frame:button:4" content="<<" />
         <meta property="og:image" content="https://welcome-frames.vercel.app/api/image" />
+        <meta name="fc:frame:post_url" content={`${process.env['HOST']}/api/join`}/>
       </Head>
       <main
         className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}

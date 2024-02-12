@@ -22,15 +22,15 @@ const IndexPage = ({host}: Props) => {
   return (
     <>
       <Head>
-        <meta property="og:title" content="Vote Recorded"/>
+        <meta property="og:title" content="Welcome this"/>
         <meta name="fc:frame" content="vNext"/>
         <meta name="fc:frame:button:1" content="Join"/>
         <meta name="fc:frame:button:2" content="<"/>
         <meta name="fc:frame:button:3" content=">"/>
         <meta name="fc:frame:button:4" content="<<"/>
-        <meta property="fc:frame:image" content={`${host}/api/image`} />
+        <meta property="fc:frame:image" content={`${host}/api/image?name=OkadaIzo.png`} />
         <meta property="og:image" content={`${host}/api/image`} />
-        <meta name="fc:frame:post_url" content={`${host}/api/join`}/>
+        <meta name="fc:frame:post_url" content={`${host}/api/join?name=OkadaIzo.png`}/>
       </Head>
       <main
         className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}

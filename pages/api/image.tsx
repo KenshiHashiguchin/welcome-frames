@@ -20,7 +20,8 @@ cloudinary.config({
 });
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const filePath = path.resolve('.', 'public/OkadaIzo.png');
+  const fileName=req.query.name;
+  const filePath = path.resolve('.', `public/${fileName}`);
   // ファイルの内容を同期的に読み込む
   const imageBuffer = fs.readFileSync(filePath);
 

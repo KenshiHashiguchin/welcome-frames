@@ -1,31 +1,89 @@
 import type {NextApiRequest, NextApiResponse} from 'next';
-import * as path from 'path';
 import sharp from 'sharp';
-import fetch from 'node-fetch';
-import {v2 as cloudinary} from 'cloudinary';
+import {join} from 'path';
 import * as fs from "fs";
+import {kv} from "@vercel/kv";
+import {getKVKey} from "@/pages/const";
+import satori from "satori";
 
-/*
- TODO
- - kvs読み取り
-   - アカウントとプロフ画面読み取り
- - pagination
- - 画像結合
- */
-// Cloudinaryの設定
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET
-});
+const fontPath = join(process.cwd(), 'Roboto-Regular.ttf')
+let fontData = fs.readFileSync(fontPath)
+
+const visitorSize = 5;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const fileName=req.query.name;
-  const filePath = path.resolve('.', `public/${fileName}`);
-  // ファイルの内容を同期的に読み込む
-  const imageBuffer = fs.readFileSync(filePath);
+  if (!req.query.channel) {
+    return res.status(400).send('Missing channel');
+  }
 
-  // Content-Typeを設定してファイルを送信
+  const channel: string = Array.isArray(req.query.channel) ? req.query.channel[0] : req.query.channel;
+
+  const key = getKVKey(channel);
+  const visitorIds: string[] = await kv.zrange(key, 0, visitorSize - 1, {rev: true, withScores: true});
+  const visitors: { name: string, time: number }[] = [];
+  for (let i = 0; i < visitorIds.length; i += 2) {
+    visitors.push({name: visitorIds[i], time: parseInt(visitorIds[i + 1])});
+  }
+
+  const svg = await satori(
+    <div style={{
+      justifyContent: 'flex-start',
+      flexDirection: 'column',
+      display: 'flex',
+      width: '100%',
+      height: '100%',
+      backgroundColor: '#424242',
+      top: 50,
+      lineHeight: '0.001em',
+      fontSize: 18,
+    }}>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        left: 20,
+        top: 20,
+      }}>
+        <p style={{color: "white"}}>Last Login: japanesebuilders</p>
+        {
+          visitors.map((visitor, index) => {
+            return (
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}>
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  lineHeight: '0.001em'
+                }}>
+                  <p style={{color: "white"}}>~/frames % gm $guest</p>
+                  <p style={{color: "darkgray"}}>{new Date(visitor.time).toLocaleString()}</p> {/* 現在時刻を表示 */}
+                </div>
+                <p style={{color: 'mediumseagreen'}}>
+                  @{visitor.name}
+                </p>
+              </div>
+            )
+          })
+        }
+      </div>
+    </div>
+    ,
+    {
+      width: 600, height: 400, fonts: [{
+        data: fontData,
+        name: 'Roboto',
+        style: 'normal',
+        weight: 400
+      }]
+    }
+  );
+
+  const pngBuffer = await sharp(Buffer.from(svg))
+    .toFormat('png')
+    .toBuffer();
+
   res.setHeader('Content-Type', 'image/png');
-  res.send(imageBuffer);
+  res.send(pngBuffer);
 }

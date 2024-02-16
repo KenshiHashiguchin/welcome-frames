@@ -6,31 +6,30 @@ import {GetServerSideProps} from "next";
 const inter = Inter({subsets: ["latin"]});
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const host = process.env.HOST;
-  // propsとしてページに値を渡す
+  const channel = context.query.channel ?? "error";
   return {
     props: {
       host,
+      channel
     },
   };
 };
 
 type Props = {
   host: string;
+  channel: string;
 };
 
-const IndexPage = ({host}: Props) => {
+const IndexPage = ({host, channel}: Props) => {
   return (
     <>
       <Head>
         <meta property="og:title" content="Welcome this"/>
         <meta name="fc:frame" content="vNext"/>
-        <meta name="fc:frame:button:1" content="Join"/>
-        <meta name="fc:frame:button:2" content="<"/>
-        <meta name="fc:frame:button:3" content=">"/>
-        <meta name="fc:frame:button:4" content="<<"/>
-        <meta property="fc:frame:image" content={`${host}/api/image?name=OkadaIzo.png`} />
-        <meta property="og:image" content={`${host}/api/image`} />
-        <meta name="fc:frame:post_url" content={`${host}/api/join?name=OkadaIzo.png`}/>
+        <meta name="fc:frame:button:1" content="GM"/>
+        <meta property="fc:frame:image" content={`${host}/api/image?channel=${channel}`} />
+        <meta property="og:image" content={`${host}/api/image?channel=${channel}`} />
+        <meta name="fc:frame:post_url" content={`${host}/api/join?channel=${channel}`}/>
       </Head>
       <main
         className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}

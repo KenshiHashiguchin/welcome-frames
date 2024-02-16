@@ -20,9 +20,6 @@ dependencies:
   cloudinary:
     specifier: ^2.0.1
     version: 2.0.1
-  figlet:
-    specifier: ^1.7.0
-    version: 1.7.0
   next:
     specifier: 14.1.0
     version: 14.1.0(react-dom@18.2.0)(react@18.2.0)
@@ -1725,12 +1722,6 @@ packages:
 
   /fflate@0.7.4:
     resolution: {integrity: sha512-5u2V/CDW15QM1XbbgS+0DfPxVB+jUKhWEKuuFuHncbk3tEEqzmoXL+2KyOFuKGqOnmdIy0/davWF1CkuwtibCw==}
-    dev: false
-
-  /figlet@1.7.0:
-    resolution: {integrity: sha512-gO8l3wvqo0V7wEFLXPbkX83b7MVjRrk1oRLfYlZXol8nEpb/ON9pcKLI4qpBv5YtOTfrINtqb7b40iYY2FTWFg==}
-    engines: {node: '>= 0.4.0'}
-    hasBin: true
     dev: false
 
   /file-entry-cache@6.0.1:

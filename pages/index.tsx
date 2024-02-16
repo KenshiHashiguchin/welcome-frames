@@ -27,8 +27,8 @@ const IndexPage = ({host, channel}: Props) => {
         <meta property="og:title" content="Welcome this" />
         <meta name="fc:frame" content="vNext" />
         <meta name="fc:frame:button:1" content="GM" />
-        <meta property="fc:frame:image" content={`${host}/api/image?channel=${channel}`} />
-        <meta property="og:image" content={`${host}/api/image?channel=${channel}`} />
+        <meta property="fc:frame:image" content={`${host}/api/image?channel=${channel}&time=${new Date().getTime()}`} />
+        <meta property="og:image" content={`${host}/api/image?channel=${channel}&time=${new Date().getTime()}`} />
         <meta name="fc:frame:post_url" content={`${host}/api/join?channel=${channel}`} />
         <meta name="fc:frame:image:aspect_ratio" content="1:1" />
       </Head>

@@ -4,10 +4,13 @@ import {
   UserDataType
 } from '@standard-crypto/farcaster-js-hub-rest';
 import {kv} from "@vercel/kv";
-import {getKVKey} from "@/pages/const";
+import {getKVKey} from "@/const";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const channel = req.query.channel; // TODO
+  if (!req.query.channel) {
+    return res.status(400).send('Missing channel');
+  }
+  const channel: string = Array.isArray(req.query.channel) ? req.query.channel[0] : req.query.channel;
   const client = new HubRestAPIClient({hubUrl: "https://hub.farcaster.standardcrypto.vc:2281"});
 
   if (req.body.untrustedData.buttonIndex == 1) {

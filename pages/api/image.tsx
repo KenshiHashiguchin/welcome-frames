@@ -3,7 +3,7 @@ import sharp from 'sharp';
 import {join} from 'path';
 import * as fs from "fs";
 import {kv} from "@vercel/kv";
-import {getKVKey} from "@/pages/const";
+import {getKVKey} from "@/const";
 import satori from "satori";
 
 const fontPath = join(process.cwd(), 'Roboto-Regular.ttf')
@@ -48,6 +48,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           visitors.map((visitor, index) => {
             return (
               <div
+                key={index}
                 style={{
                   display: 'flex',
                   flexDirection: 'column',

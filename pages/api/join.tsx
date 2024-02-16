@@ -43,6 +43,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         <meta property="fc:frame:image" content="${host}/api/image?channel=${channel}" >
         <meta property="og:image" content="${host}/api/image?channel=${channel}" >
         <meta name="fc:frame:post_url" content="${host}/api/join?channel=${channel}">
+        <meta name="fc:frame:image:aspect_ratio" content="1:1">
         </head>
         <body>
         </body>

@@ -9,7 +9,7 @@ import satori from "satori";
 const fontPath = join(process.cwd(), 'Roboto-Regular.ttf')
 let fontData = fs.readFileSync(fontPath)
 
-const visitorSize = 5;
+const visitorSize = 7;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!req.query.channel) {
@@ -72,7 +72,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     </div>
     ,
     {
-      width: 600, height: 400, fonts: [{
+      width: 500, height: 500, fonts: [{
         data: fontData,
         name: 'Roboto',
         style: 'normal',

@@ -59,7 +59,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                   lineHeight: '0.001em'
                 }}>
                   <p style={{color: "white"}}>~/frames % gm $guest</p>
-                  <p style={{color: "darkgray"}}>{new Date(visitor.time).toLocaleString()}</p> {/* 現在時刻を表示 */}
+                  <p style={{color: "darkgray"}}>{getFormattedDate(visitor.time)}</p> {/* 現在時刻を表示 */}
                 </div>
                 <p style={{color: 'mediumseagreen'}}>
                   @{visitor.name}
@@ -87,4 +87,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   res.setHeader('Content-Type', 'image/png');
   res.send(pngBuffer);
+}
+
+function getFormattedDate(time: number): string {
+  let date = new Date(time);
+  return `${date.getFullYear()}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${(date.getDate()).toString().padStart(2, '0')} ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')} UTC`;
 }

@@ -43,7 +43,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         left: 20,
         top: 20,
       }}>
-        <p style={{color: "white"}}>Last Login: japanesebuilders</p>
+        <p style={{color: "white"}}>Last Login: {channel}</p>
         {
           visitors.map((visitor, index) => {
             return (

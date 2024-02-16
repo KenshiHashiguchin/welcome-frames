@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@farcaster/core": "0.13.5",
     "@standard-crypto/farcaster-js-hub-rest": "^1.4.0",
     "@types/node-fetch": "^2.6.11",
     "@vercel/kv": "^1.0.1",
